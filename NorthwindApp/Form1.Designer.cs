@@ -42,13 +42,15 @@
             this.deleteCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.excersizesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ex1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewer = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ex2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ex3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ex4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -157,7 +159,9 @@
             this.ex1ToolStripMenuItem,
             this.ex2ToolStripMenuItem,
             this.ex3ToolStripMenuItem,
-            this.ex4ToolStripMenuItem});
+            this.ex4ToolStripMenuItem,
+            this.ex5ToolStripMenuItem,
+            this.ex6ToolStripMenuItem});
             this.excersizesToolStripMenuItem.Name = "excersizesToolStripMenuItem";
             this.excersizesToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.excersizesToolStripMenuItem.Text = "excersizes";
@@ -168,6 +172,27 @@
             this.ex1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ex1ToolStripMenuItem.Text = "ex1";
             this.ex1ToolStripMenuItem.Click += new System.EventHandler(this.ex1ToolStripMenuItem_Click);
+            // 
+            // ex2ToolStripMenuItem
+            // 
+            this.ex2ToolStripMenuItem.Name = "ex2ToolStripMenuItem";
+            this.ex2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex2ToolStripMenuItem.Text = "ex2";
+            this.ex2ToolStripMenuItem.Click += new System.EventHandler(this.ex2ToolStripMenuItem_Click);
+            // 
+            // ex3ToolStripMenuItem
+            // 
+            this.ex3ToolStripMenuItem.Name = "ex3ToolStripMenuItem";
+            this.ex3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex3ToolStripMenuItem.Text = "ex3";
+            this.ex3ToolStripMenuItem.Click += new System.EventHandler(this.ex3ToolStripMenuItem_Click);
+            // 
+            // ex4ToolStripMenuItem
+            // 
+            this.ex4ToolStripMenuItem.Name = "ex4ToolStripMenuItem";
+            this.ex4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex4ToolStripMenuItem.Text = "ex4";
+            this.ex4ToolStripMenuItem.Click += new System.EventHandler(this.ex4ToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -210,26 +235,19 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ex2ToolStripMenuItem
+            // ex5ToolStripMenuItem
             // 
-            this.ex2ToolStripMenuItem.Name = "ex2ToolStripMenuItem";
-            this.ex2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ex2ToolStripMenuItem.Text = "ex2";
-            this.ex2ToolStripMenuItem.Click += new System.EventHandler(this.ex2ToolStripMenuItem_Click);
+            this.ex5ToolStripMenuItem.Name = "ex5ToolStripMenuItem";
+            this.ex5ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex5ToolStripMenuItem.Text = "ex5";
+            this.ex5ToolStripMenuItem.Click += new System.EventHandler(this.ex5ToolStripMenuItem_Click);
             // 
-            // ex3ToolStripMenuItem
+            // ex6ToolStripMenuItem
             // 
-            this.ex3ToolStripMenuItem.Name = "ex3ToolStripMenuItem";
-            this.ex3ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ex3ToolStripMenuItem.Text = "ex3";
-            this.ex3ToolStripMenuItem.Click += new System.EventHandler(this.ex3ToolStripMenuItem_Click);
-            // 
-            // ex4ToolStripMenuItem
-            // 
-            this.ex4ToolStripMenuItem.Name = "ex4ToolStripMenuItem";
-            this.ex4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ex4ToolStripMenuItem.Text = "ex4";
-            this.ex4ToolStripMenuItem.Click += new System.EventHandler(this.ex4ToolStripMenuItem_Click);
+            this.ex6ToolStripMenuItem.Name = "ex6ToolStripMenuItem";
+            this.ex6ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex6ToolStripMenuItem.Text = "ex6";
+            this.ex6ToolStripMenuItem.Click += new System.EventHandler(this.ex6ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -275,6 +293,8 @@
         private System.Windows.Forms.ToolStripMenuItem ex2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ex3ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ex4ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ex5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ex6ToolStripMenuItem;
     }
 }
 

@@ -1,4 +1,5 @@
 ﻿using NorthwindApp.Ex;
+using NorthwindApp.QueryObjects;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -84,8 +85,8 @@ namespace NorthwindApp
         private void ex3ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //var results = from E in dc.Employees
-            //        where E.BirthDate < DateTime.Today.AddYears(-50)
-            //        select new { E.FirstName, E.LastName, E.Address, E.City, E.Region };
+            //              where E.BirthDate < DateTime.Today.AddYears(-50)
+            //              select new { E.FirstName, E.LastName, E.Address, E.City, E.Region };
 
 //            var results = dc.ExecuteQuery<Employee>
 //(@"SELECT TOP 1000 [EmployeeID]
@@ -111,7 +112,7 @@ namespace NorthwindApp
 //);
 
             var results = dc.ExecuteQuery<Employee>
-(@"SELECT EmployeeID,Address,Region,city,FirstName,BirthDate FROM Employees WHERE(select DATEDIFF(yy,BirthDate, getdate()))>50"
+(@"SELECT EmployeeID,Address,Region,city,FirstName,BirthDate FROM Employees WHERE (select DATEDIFF(yy,BirthDate, getdate())) >= 50"
 );
 
 
@@ -138,6 +139,67 @@ AND (dbo.Orders.EmployeeID = dbo.Employees.EmployeeID)
 
             this.dataGridViewer.DataSource = results.ToList();
             this.dataGridViewer.RemoveEmptyColumns();
+        }
+
+        private void ex5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
+            //var results = from E in dc.Employees
+            //              join O in dc.Orders on E.EmployeeID equals O.EmployeeID
+            //              join C in dc.Customers on O.CustomerID equals C.CustomerID
+            //              join S in dc.Shippers on O.ShipVia equals S.ShipperID
+            //              where C.City == "Bruxelles"
+            //              where S.CompanyName == "Speedy Express"
+            //              select new { E.FirstName, E.LastName, C.CompanyName };
+
+                        var results = dc.ExecuteQuery<EX5>
+(@"SELECT t0.FirstName, t0.LastName, t2.CompanyName as CustomerCompanyName  ,t3.CompanyName as ShipperCompanyName, t2.City
+FROM dbo.Employees AS t0
+INNER JOIN dbo.Orders AS t1 ON (t0.EmployeeID) = t1.EmployeeID
+INNER JOIN dbo.Customers AS t2 ON t1.CustomerID = t2.CustomerID
+INNER JOIN dbo.Shippers AS t3 ON t1.ShipVia = (t3.ShipperID)
+WHERE (t3.CompanyName = 'Speedy Express') AND (t2.City = 'Bruxelles')");
+
+            this.dataGridViewer.DataSource = results.ToList();
+            this.dataGridViewer.RemoveEmptyColumns();
+        }
+
+        private void ex6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //var results = (from E in dc.Employees
+            //               from O in E.Orders
+            //               from D in O.Order_Details
+            //               join P in dc.Products on D.ProductID equals P.ProductID
+            //               where P.ProductName == "Gravad Lax" || P.ProductName == "Mishi Kobe Niku"
+            //               select new { E.Title, E.FirstName, E.LastName }).Distinct();
+
+//           var results = dc.ExecuteQuery<EX6>(
+//@"SELECT DISTINCT t0.Title, t0.FirstName, t0.LastName 
+//FROM dbo.Employees AS t0
+//CROSS JOIN dbo.Orders AS t1
+//CROSS JOIN dbo.[Order Details] AS t2
+//INNER JOIN dbo.Products AS t3 ON t2.ProductID = t3.ProductID
+//WHERE ((t3.ProductName = 'Gravad Lax') OR (t3.ProductName = 'Mishi Kobe Niku')) AND (t1.EmployeeID = t0.EmployeeID) AND (t2.OrderID = t1.OrderID)");
+
+
+                       var results = dc.ExecuteQuery<EX6>(
+@"            SELECT DISTINCT t0.Title, t0.FirstName, t0.LastName 
+FROM dbo.Employees AS t0 
+INNER JOIN dbo.Orders AS t1 ON (t1.EmployeeID = t0.EmployeeID) 
+INNER JOIN dbo.[Order Details] AS t2 ON  (t2.OrderID = t1.OrderID)
+INNER JOIN dbo.Products AS t3 ON t2.ProductID = t3.ProductID
+WHERE ((t3.ProductName = 'Gravad Lax') OR (t3.ProductName = 'Mishi Kobe Niku')) ");
+
+
+
+
+
+
+            this.dataGridViewer.DataSource = results.ToList();
+            this.dataGridViewer.RemoveEmptyColumns();
+
+
         }
         
 

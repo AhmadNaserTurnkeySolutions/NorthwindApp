@@ -59,6 +59,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryObjects\EX4.cs" />
+    <Compile Include="QueryObjects\EX5.cs" />
+    <Compile Include="QueryObjects\EX6.cs" />
     <None Include="DataContext.dbml.layout">
       <DependentUpon>DataContext.dbml</DependentUpon>
     </None>
