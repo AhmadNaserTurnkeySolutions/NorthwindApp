@@ -201,6 +201,114 @@ WHERE ((t3.ProductName = 'Gravad Lax') OR (t3.ProductName = 'Mishi Kobe Niku')) 
 
 
         }
+
+        private void ex7ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var results = dc.ExecuteQuery<EX7>(
+@"SELECT t0.Title, t0.FirstName, t0.LastName,t2.Title AS MgrTitle, t2.FirstName AS MgrFistName, t2.LastName  AS MgrLastName
+  FROM dbo.Employees AS t0
+  LEFT OUTER JOIN (  Select   t1.EmployeeID, t1.LastName, t1.FirstName, t1.Title    FROM dbo.Employees AS t1    ) AS t2 ON t0.ReportsTo = (t2.EmployeeID)
+  Where t2.Title  IS NOT NULL ");
+
+
+
+
+
+
+            this.dataGridViewer.DataSource = results.ToList();
+            this.dataGridViewer.RemoveEmptyColumns();
+
+
+            //var results = from E in dc.Employees
+            //              join M1 in dc.Employees on E.ReportsTo equals M1.EmployeeID into M2
+            //              from M in M2.DefaultIfEmpty()
+            //              select new
+            //              {
+            //                  E.Title,
+            //                  E.FirstName,
+            //                  E.LastName,
+            //                  MgrTitle = (M == null ? String.Empty : M.Title),
+            //                  MgrFistName = (M == null ? String.Empty : M.FirstName),
+            //                  MgrLastName = (M == null ? String.Empty : M.LastName)
+            //              };
+
+            //this.dataGridViewer.DataSource = results.ToList();
+            //this.dataGridViewer.RemoveEmptyColumns();
+
+
+        }
+
+        private void ex8ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var results = dc.ExecuteQuery<EX8>(
+@"SELECT DISTINCT t4.CompanyName, t1.ProductName, t0.CompanyName AS SupplierName
+FROM dbo.Suppliers AS t0
+CROSS JOIN dbo.Products AS t1
+CROSS JOIN dbo.[Order Details] AS t2
+INNER JOIN dbo.Orders AS t3 ON t2.OrderID = t3.OrderID
+INNER JOIN dbo.Customers AS t4 ON t3.CustomerID = t4.CustomerID
+WHERE 
+(t4.City = 'London') 
+AND ((t0.CompanyName = 'Pavlova, Ltd.') 
+OR (t0.CompanyName = 'Karkki Oy')) 
+AND (t1.SupplierID = t0.SupplierID) 
+AND (t2.ProductID = t1.ProductID)");
+
+
+
+
+
+
+            this.dataGridViewer.DataSource = results.ToList();
+            this.dataGridViewer.RemoveEmptyColumns();
+
+            //var results = (from S in dc.Suppliers
+            //               where S.CompanyName == "Pavlova, Ltd." || S.CompanyName == "Karkki Oy"
+            //               from P in S.Products
+            //               from D in P.Order_Details
+            //               join O in dc.Orders on D.OrderID equals O.OrderID
+            //               join C in dc.Customers on O.CustomerID equals C.CustomerID
+            //               where C.City == "London"
+            //               select new
+            //               {
+            //                   C.CompanyName,
+            //                   P.ProductName,
+            //                   SupplierName = S.CompanyName
+            //               }).Distinct();
+
+            //this.dataGridViewer.DataSource = results.ToList();
+            //this.dataGridViewer.RemoveEmptyColumns();
+        }
+
+        private void ex9ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var results = (from P in dc.Products
+                           from D in P.Order_Details
+                           join O in dc.Orders on D.OrderID equals O.OrderID
+                           join E in dc.Employees on O.EmployeeID equals E.EmployeeID
+                           join C in dc.Customers on O.CustomerID equals C.CustomerID
+                           where (E.City == "London") || (C.City == "London")
+                           select new { P.ProductName }).Distinct();
+
+            this.dataGridViewer.DataSource = results.ToList();
+            this.dataGridViewer.RemoveEmptyColumns();
+        }
+
+        private void categoyYearSalesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var results = dc.ExecuteQuery<SalesByCategory>(
+@"[dbo].[SalesByCategory] Seafood,1998");
+
+
+
+
+
+
+            this.dataGridViewer.DataSource = results.ToList();
+            this.dataGridViewer.RemoveEmptyColumns();
+        }
         
 
     }

@@ -61,6 +61,9 @@
     <Compile Include="QueryObjects\EX4.cs" />
     <Compile Include="QueryObjects\EX5.cs" />
     <Compile Include="QueryObjects\EX6.cs" />
+    <Compile Include="QueryObjects\EX7.cs" />
+    <Compile Include="QueryObjects\EX8.cs" />
+    <Compile Include="QueryObjects\SalesByCategory.cs" />
     <None Include="DataContext.dbml.layout">
       <DependentUpon>DataContext.dbml</DependentUpon>
     </None>

@@ -45,12 +45,17 @@
             this.ex2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ex3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ex4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex7ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ex9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewer = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ex5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ex6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.storedProcedureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.categoyYearSalesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -62,7 +67,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.queriesToolStripMenuItem,
-            this.excersizesToolStripMenuItem});
+            this.excersizesToolStripMenuItem,
+            this.storedProcedureToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(459, 24);
@@ -161,7 +167,10 @@
             this.ex3ToolStripMenuItem,
             this.ex4ToolStripMenuItem,
             this.ex5ToolStripMenuItem,
-            this.ex6ToolStripMenuItem});
+            this.ex6ToolStripMenuItem,
+            this.ex7ToolStripMenuItem,
+            this.ex8ToolStripMenuItem,
+            this.ex9ToolStripMenuItem});
             this.excersizesToolStripMenuItem.Name = "excersizesToolStripMenuItem";
             this.excersizesToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.excersizesToolStripMenuItem.Text = "excersizes";
@@ -193,6 +202,41 @@
             this.ex4ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ex4ToolStripMenuItem.Text = "ex4";
             this.ex4ToolStripMenuItem.Click += new System.EventHandler(this.ex4ToolStripMenuItem_Click);
+            // 
+            // ex5ToolStripMenuItem
+            // 
+            this.ex5ToolStripMenuItem.Name = "ex5ToolStripMenuItem";
+            this.ex5ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex5ToolStripMenuItem.Text = "ex5";
+            this.ex5ToolStripMenuItem.Click += new System.EventHandler(this.ex5ToolStripMenuItem_Click);
+            // 
+            // ex6ToolStripMenuItem
+            // 
+            this.ex6ToolStripMenuItem.Name = "ex6ToolStripMenuItem";
+            this.ex6ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex6ToolStripMenuItem.Text = "ex6";
+            this.ex6ToolStripMenuItem.Click += new System.EventHandler(this.ex6ToolStripMenuItem_Click);
+            // 
+            // ex7ToolStripMenuItem
+            // 
+            this.ex7ToolStripMenuItem.Name = "ex7ToolStripMenuItem";
+            this.ex7ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex7ToolStripMenuItem.Text = "ex7";
+            this.ex7ToolStripMenuItem.Click += new System.EventHandler(this.ex7ToolStripMenuItem_Click);
+            // 
+            // ex8ToolStripMenuItem
+            // 
+            this.ex8ToolStripMenuItem.Name = "ex8ToolStripMenuItem";
+            this.ex8ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex8ToolStripMenuItem.Text = "ex8";
+            this.ex8ToolStripMenuItem.Click += new System.EventHandler(this.ex8ToolStripMenuItem_Click);
+            // 
+            // ex9ToolStripMenuItem
+            // 
+            this.ex9ToolStripMenuItem.Name = "ex9ToolStripMenuItem";
+            this.ex9ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ex9ToolStripMenuItem.Text = "ex9";
+            this.ex9ToolStripMenuItem.Click += new System.EventHandler(this.ex9ToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
@@ -235,19 +279,20 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // ex5ToolStripMenuItem
+            // storedProcedureToolStripMenuItem
             // 
-            this.ex5ToolStripMenuItem.Name = "ex5ToolStripMenuItem";
-            this.ex5ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ex5ToolStripMenuItem.Text = "ex5";
-            this.ex5ToolStripMenuItem.Click += new System.EventHandler(this.ex5ToolStripMenuItem_Click);
+            this.storedProcedureToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.categoyYearSalesToolStripMenuItem});
+            this.storedProcedureToolStripMenuItem.Name = "storedProcedureToolStripMenuItem";
+            this.storedProcedureToolStripMenuItem.Size = new System.Drawing.Size(109, 20);
+            this.storedProcedureToolStripMenuItem.Text = "stored procedure";
             // 
-            // ex6ToolStripMenuItem
+            // categoyYearSalesToolStripMenuItem
             // 
-            this.ex6ToolStripMenuItem.Name = "ex6ToolStripMenuItem";
-            this.ex6ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.ex6ToolStripMenuItem.Text = "ex6";
-            this.ex6ToolStripMenuItem.Click += new System.EventHandler(this.ex6ToolStripMenuItem_Click);
+            this.categoyYearSalesToolStripMenuItem.Name = "categoyYearSalesToolStripMenuItem";
+            this.categoyYearSalesToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.categoyYearSalesToolStripMenuItem.Text = "CategoyYearSales";
+            this.categoyYearSalesToolStripMenuItem.Click += new System.EventHandler(this.categoyYearSalesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -295,6 +340,11 @@
         private System.Windows.Forms.ToolStripMenuItem ex4ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ex5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ex6ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ex7ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ex8ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ex9ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem storedProcedureToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem categoyYearSalesToolStripMenuItem;
     }
 }
 
